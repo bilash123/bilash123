@@ -1,0 +1,672 @@
+# all r programs have .r extension 
+
+# .r will open in Rstudio
+
+# Comment -used for document 
+
+# put a # in of the line or ctrl+shift+c
+
+# we will share the code after the class ends so dont copy just conentrace
+
+help(sum)
+
+# .R extnsion- all r programs have a .R ext
+
+# arithmatic operation just like a calculator 
+# addition
+
+# for deleting the console,use the broom icon or use ctrl+1
+
+# [1] - 1st element of the output in vector from. simplest data stracter 
+
+# subtraction
+
+100-2
+
+# multiplication
+20*2
+
+# division 
+
+100/3
+
+# for exection a code,the curson should be in line ctrl+enter
+
+# how to get the remainder after division
+
+# module operator
+
+100%%3
+
+# exponent of any number
+
+2^5
+# 2.2.2.2.2
+# integer diision 
+# this will give the actual integer value 
+
+100%%3
+
+#  10000000/7 -we want to get remain der and integer division result
+
+# varibale is an object having a value stored 
+
+x<-10000000/7
+x
+# once we assign a variable,we nned to use print(var-name) or just give name of the object
+print(x)
+x
+
+left pointing arrow 
+# x=10
+#= is use for giving argument for a function 
+
+alt and hyphen 
+<-
+
+# get the decimal part 
+
+  
+  
+# we want to get the remainder 
+  
+  10000000%%7
+
+# integer value after division 
+
+10000000%%7
+
+
+
+# decimal value 
+
+# acule division - integer value after division 
+
+10000000/7-10000000%%%7
+
+
+a<-10000000
+b<-7
+a/b
+
+# modules of any number 
+
+abs(-19)
+
+abs(19)
+
+
+# log 
+
+# log to the base e
+log(10,base=exp(1))
+
+help(log)
+
+log10(1000)
+
+x<-10.3987
+x
+
+# round if off to 2 decimal pleace 
+round(x,digits=2)
+
+help(round)
+
+digits
+
+# digits is an aregument to the function
+
+# so we use <- to assign value to the vars
+
+pi
+
+# magic no=c
+exp(1)
+
+
+
+# flooring of any no
+
+floor(199.32)
+
+# ceiling
+
+ ceiling (199.60)
+
+ 
+# R is powerful calculator
+ 
+help() - in doubt use this
+x<-100
+
+x+100
+
+# how dose R.store data 
+
+# we have already seen a R data type - numbers
+
+# automic data type -1
+
+# double
+
+# any no with a deimal 
+
+a<-19.2
+
+typeof(a)
+
+# by defualt,the numberie data type is double 
+
+# if we want to change it to a integer 
+
+as.integer(b)
+typeof(as.integer(b))
+
+typeof(b)
+
+b<- as integer(b)
+
+# now b data type will be int
+
+
+typeof(-19.32)
+
+# R is a dnamically typed programming language 
+
+# int a=10 wrong
+# we dont have to give the data type, r automatically does that 
+
+# Inf and -Inf
+
+
+typeof(-Inf)
+
+typeof(Inf)
+
+# NaN- stand for Not a number-
+typeof(%)
+
+# inf -Int and Nan are all double 
+
+
+
+# 2.Data type -Integer 
+
+
+
+# b<-as.integer(19)
+
+typeof(b)
+
+# change b to a double 
+
+
+typeof(as.numeric(b))
+
+# int+double-double
+
+b+19.1
+
+# int and double are 2 numeri data type 
+# double requires more space in memory 
+
+
+# 3. complex data type 
+
+
+a<-1+3i
+
+typeof(a)
+
+
+uqrt(-100)
+
+a<-- 100
+
+typeof(a)
+
+# change the number to complex
+
+as.complex(a)
+
+
+10i+10i
+
+
+# 4. Logical data type 
+
+a<- TRUE 
+
+typeof(a)
+b<- FALSE
+
+typeof(TRUE)
+
+# R is a case sensitive 
+
+# it is the result of the logical operations
+
+
+10>3
+
+
+>,>=,<,<=
+
+  x<-10  
+
+# comprue that x equals 100 or not?
+
+# x<-100-wrong 
+
+
+
+ x==100 
+
+ # not equals 
+ 
+ 
+ x!=100
+
+ 
+ # sometimes we have to combine the operations,
+ 
+ 
+ 
+ # Apply the and condition when the resultant is true only when both are true 
+ TRUE&TRUE
+
+ TRUE&FALSE 
+
+ FALSE&TRUE 
+ FALSE&FALSE
+ 
+ 
+ # not operator
+ 
+ ! TRUE
+
+ 
+ ! FALSE
+
+ 
+ # USE these oprators when we apply condiions
+ # g,|,!-
+ 
+ 
+ # dont use these operators
+ # gg,|| - logical and, logical or operators
+ 
+ 
+ 
+ 
+ # 5. character
+ 
+ x<- 'sakshi'
+typeof(x) 
+
+x<- "neha"
+x
+
+
+a<-10
+
+# convert it into char
+
+as.character(a)
+
+# '10'-a character value 
+
+
+
+
+# raw data type - when the data is flowing through a sourse system, say in
+# hex format and we save it as it is in R 
+
+
+a<- 'SIMPLE'
+
+# changr the char to row format
+
+b<- char ToRaw(a)
+
+typeof(b)
+
+
+# so the basic bulding blocks of r are:
+
+# int,double ,character,logical,complex,raw
+
+
+# variables
+# the name we assign to an object 
+
+x<- 10
+
+
+# we can access the value of the nar by the name x
+
+
+# no empty spaces 
+first name <- 'sunny'
+
+# no speciel chars
+@dhs-19
+
+
+# the variable name cant start which a number
+12s <-10
+
+# dont use reserved keywords as variable names 
+
+# function name,AND,TRUE,FALSE
+
+
+
+# r data stracters
+
+
+# we have work with large collection of related value - DS 
+
+# vector -simplest DS in R
+
+
+# sequence of elements of the same data type 
+
+# if is homogeneous
+
+
+# c() -using the concat.function
+
+
+vec <- c(10,20,30,40)
+
+# the elemant are ordered
+
+# index, we can get the value
+
+# in R index is from 1-length of the vector
+
+
+# for extrectinh the value at the ntr index,
+
+# vactoe[n]
+[]-indexing
+() - function
+
+
+print('vector')
+
+
+
+
+# for extrancting the value at the 1st index vec[1]
+vec[1]
+
+# last value
+
+vac[4]
+
+vec[length(vec)]
+
+# get the value from m to nth index
+
+# vec[start:end]
+
+# get the value 1st fill 3rd index
+
+vec[1:3]
+
+# get all the value except the one whieh is stored at that index
+
+vec[1]
+
+
+# seq(start=,end=,step=)
+
+
+# vector stwrt from 0 -fill loo,with a step of 5
+
+
+seq(0,100,5)
+
+
+# create a vector named vec1 wich has value from 1 - 50 which a step of 3 
+vec1 <-seq(1,50,3)
+vec1
+
+# extract the 2nd value 
+vec[2]
+
+# get the 2nd to 5th value 
+vec[2:5]
+
+# get the last value 
+vec[length(vec1)]
+
+# get all value excepted the last 
+vec1[-length(vec1)]
+
+# r vector are homogeneous 
+vec2<-c(1,2,3,'a')
+vec2
+
+# all elements change to char
+
+
+# numeric and a logical <<numeric
+vec1<-c(TRUE,10,20,FALSE)
+
+vec1
+
+# logical,numeric and char value 
+
+vec2<-c(10,TRUE,'a')
+vec2
+
+
+# hierarchy of type casting
+
+# boo1 <numeric<char
+
+
+
+print('simplilkerb'
+      
+      
+      sinkl)
+
+# vectorized operations
+
+# the operation works on each element separately
+
+vec1
+
+vec1+100
+
+
+
+
+
+
+# suppose we wan to apply a condition on this vector 
+
+vec
+
+vec>25
+
+# all the value which are >25 for this vec
+
+
+vec[c(FALSE,FALSE,TRUE,TRUE)]
+
+# wherever the value ia true that index get returned
+
+# 3rd and 4th index 
+
+
+
+vec[vec>25]
+
+
+vec1<-c(1,2,3,4)
+
+# element wise multiplication
+
+vec*vec1
+
+# dot product
+
+
+vec%%vec1
+
+
+# how to generate vector 
+
+c()
+
+seq
+
+1:10
+
+rep('a',10)
+
+
+
+# 2. MATRIX
+
+[1 2]
+3 4
+
+
+
+# how to create a matrix 
+
+
+matrix(data,nrow=no of rows,ncol=no of columns,byrow=the data will be filled row wise,dimnames)
+
+
+vec<-c(1,2,3,4,5,6)
+
+
+
+# 3 row*2 col
+
+
+mat1<- matrix(data=vec,nrow=3,ncol=2,byrow=TRUE,dimnames=list(c('1str','2ndrow','3rdrow'),(c('1stcol','2ndcol'))))
+mat1
+
+# extract the value 6
+
+# index works a
+
+# mat1[row,col]
+
+mat[3,2]
+
+
+
+mat1['3rdrow','2ndcol']
+
+
+
+# extract all the value in 1st row
+
+mat[1,]
+
+# all value in 1st col
+
+mat1[,1]
+
+
+
+# 1st 2rows, 1st 2col
+
+mat1[1:2,1:2]
+
+
+1:9
+
+mat2<-matrix(1:9,nrow=3,ncol=3,byrow=FALSE)
+mat2
+
+mat3<-matrix(10:18,nrow=3,ncol=3,byrow=TRUE)
+mat3
+
+# combine 2 martix
+
+# stacking of the 2 matrix
+
+# com.row wise
+rbind(mat2,mat3)
+
+
+# combine the matrix side by side 
+
+
+# combine column wise
+
+
+cbind(mat2,mat3)
+
+mat2
+
+
+# extract all the value >6.5
+
+
+mat>6.5
+
+
+mat2[mat2,>6.5]
+
+
+
+# diagnoal value of the mat
+
+
+diag(mat2)
+
+
+# mean of the value 
+
+
+mean(mat2)
+
+
+# sum
+
+sum(mat1)
+
+
+# sum of the rows
+
+rowsums(mat2)
+
+
+# sum of the columns
+
+colsums(mat2)
+
+
+# min value 
+
+
+
+# max(mat2)
+
+max(mat2)
+
+
+
+# 3. list 
+
+
+# object of different data type 
+
+# matrix,vector-data type is some
+
+
+my_list<-list(1:9,'simplilearn',mat2)
+
+my_list
