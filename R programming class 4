@@ -1,0 +1,301 @@
+# plots 
+
+# we can find teh relationship between variable and the spread of a variable by many ways
+# 1. base r
+# 2. package called a ggplot
+
+
+install.package('ggplot2')
+
+b# after MSfall the package 
+
+library('ggplot2')
+
+
+# to cheek the package which have been loaded in RAM,
+
+search()
+
+
+help(diamonds)
+view(diamonds)
+
+
+# use the dataset to make plots
+
+# copy of the diamond dataset 
+
+dia<-diamonds
+dim(dia)
+
+# variable decription of the dataset
+
+str(dim)
+
+# ordinal-arrange the values in a order 
+
+
+# height - tall<taller<tallest
+
+# count of diamonds by cuts
+
+
+# barflots - display count of categorical vars
+
+
+# get the column cut
+
+
+dia$cut
+
+
+# get the counts of these
+
+table(dia$cut)
+
+# put in inside the barplot function
+
+
+barplot(table(dia$cut))
+
+
+# if we want to see the contribution of colors in each cut bar,we can use
+
+
+tabel(dia$color,dia$cut)
+
+# add a legend to the plot
+
+levels(dia$color)
+
+
+# stacked on top of each other-stacked bar plot 
+
+barplot(table(dia$color,dia$cut),legend=levels(dia$color))
+
+# instead of a stacked barplot,we can create the bers beside each other
+
+barplot(table(dia$color,dia$cut),legend=levels(dia$color),beside = TRUE)
+
+# counts of the price
+
+dia$carat
+
+# for continous variable,we will use a histogram
+
+
+# breaks = no of bins(class intervals)
+# col=color
+hist(dia$carat,breaks = 50,col = 'blue')
+
+# put a limit on the xaxis from 0-3 carats
+
+
+hist(dia$carat,breaks = 50,col = 'red',xlim = c(0,3))
+
+
+# decriptive stats of the dataset
+
+
+summary(dia)
+
+# counts of diamonds where the carat>3
+
+library('dplyr')
+
+
+# 32 dimonds whose carat>3
+
+dia %>% filter(carat>3) %>% count()
+
+# look at the outliers - exceptional value 
+
+
+var(dia$carat)
+
+sd(dia$carat)
+
+help(var)
+
+
+# boplot will show the outliers of coutinous variable
+
+# boxplot for carat
+boxplot(dia$carat,horizontal = TRUE,xlab='carat',col = 'blue')
+
+boxplot(dia$carat,horizontal = FALSE,xlab='carat',col = 'blue')
+
+
+
+# suppose we have to produce multiple boxplots by a variable
+
+
+# boxplot of carat by cuts of the diamonds
+
+boxplot(dia$carat~dia$cut)
+
+# density plots
+
+# probability density of the variables
+
+# of carat 
+
+plot(density(dia$carat))
+
+# seatterplot
+
+# it takes 2 variable and plots them on the x,y plane
+
+
+
+# continous variable 
+
+
+
+plot(x,y)
+
+
+# on x axis - carat
+
+# on y axis - price
+
+plot(x=dia$carat,y=dia$price,xlab = 'carat',ylab = 'price')
+
+
+# base r command for ploting 
+
+
+# we will see how to use ggplot2
+
+# grammer of graphics V2 - ggplot2
+
+library('ggplot2')
+
+# ggplot has 2 function
+
+
+# 1. quickplot
+# 2. ggplot
+
+# use qplot to create a seatterplot
+
+qplot(data = dia,
+      x=carat,
+      y=price,
+      xlab = 'carat',
+      yylab = 'price')
+
+
+
+
+# inside the seatterplot,use different cuts
+
+qplot(data = dia,
+      x = carat,
+      y = price,
+      xlab = 'carat',
+      ylab = 'price')
+
+
+# qplot will have other plotting function
+
+
+# ggplot
+
+
+ggplot(data = dia)
+
+# add aesthetic proerties to the plot 
+
+# what variable to plot 
+
+
+ggplot(data=dia$carat(x=carat,y=price))
+
+# goem - how the point sare mapped to the plot
+
+# a goem is a goemerical object that a plot users to rerresent data
+
+# for seatterplot_goem_point
+
+
+ggplot(data = dia,aes(x=carat,y=price))+geom_point()
+
+
+# geom_bar_boxplot
+
+# geom_bar_boxplot
+
+
+# lets take another data set to produce plots
+
+help(mpg)
+
+View(mpg)
+
+str(mpg)
+
+
+summary(mpg)
+
+
+# create a seatterplot bw hay and the dispal
+
+ggplot(data = mpg,aes(x=displ,y=hwy))+geom_point()
+
+
+# separate the points by the class of the cars 
+
+# add aesthetic color
+ggplot(data = mpg,aes(x=displ,y=hwy,color=class))+geom_point()
+
+
+# add aesthetic shape
+ggplot(data = mpg,aes(x=displ,y=hwy,shape=class))+geom_point()
+
+# next aesthetic - size
+ggplot(data = mpg,aes(x=displ,y=hwy,size=class))+geom_point()
+
+
+# next asthetic-tramspareney
+
+# add aesthetic shape
+ggplot(data = mpg,aes(x=displ,y=hwy,alpha=class))+geom_point()
+# add aesthetic shape
+ggplot(data = mpg,aes(x=displ,y=hwy,shape=class,color=drv))+geom_point()
+
+
+
+# grid of plots
+# divied the seatterplots by the drv
+
+
+# add aesthetic shape
+ggplot(data = mpg,aes(x=displ,y=hwy))+geom_point()+facet_wrap(~drv)
+
+
+# divied the seatterplots by the drv and cyl
+ggplot(data = mpg,aes(x=displ,y=hwy))+geom_point()+facet_wrap(class~drv)
+
+
+# facet_grid
+ggplot(data = mpg,aes(x=displ,y=hwy))+geom_point()+facet_grid(class~drv)
+
+
+# barplot of the classes of cars
+
+
+ggplot(data=mpg,aes(x=class))+geom_bar()
+
+
+# if we want to add labels of the bar
+ggplot(data=mpg,aes(x=class))+geom_bar()+geom_text(stat = 'count',aes(label=after_stat(count)))
+
+
+# create the different colors of the bar
+ggplot(data=mpg,aes(x=class))+geom_bar()+geom_text(stat = 'count',aes(label=after_stat(count)),vjust=1)+scale_fill_manual(values = c('red','yellow','blue','green','brown','purple'))
+
+# create a seatterplot and a smoothplot
+
+ggplot(data=mpg,mapping = aes(x=displ,y=hwy))+geom_point()+geom_smooth()
+
